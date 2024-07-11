@@ -71,7 +71,7 @@ forLogit = forLogit[forLogit['Custom_Choice_id'].isin(temp)]
 temp = forLogit.groupby('Custom_Choice_id').count()
 temp = temp[temp['Choice']>=2].reset_index()
 temp = list(temp['Custom_Choice_id'])
-temp = random.sample(temp, 40000)
+temp = random.sample(temp, 30000)
 forLogit = forLogit[forLogit['Custom_Choice_id'].isin(temp)]
 
 forLogit['Connect'] = forLogit.apply(lambda row: int(row.connect),axis=1)
